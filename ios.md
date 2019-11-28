@@ -91,6 +91,7 @@ open -a是mac os的系统命令，除了iOS项目，别的项目也可以这样�
 
 编译成功会在屏幕上淡淡地显示“Build Succeeded”。反之，失败就显示“Build Failed”且不启动模拟器。
 
+> 最新的Xcode编译后会报 `Compiling IB documents for earlier than iOS7 is no longer supported`， 此时需要手动点击报错，在面板中找到build for 选择合适的版本
 
 ### 修改
 在模拟器上看到“Performed search using…”了吧，下面我们改掉它。
@@ -445,7 +446,7 @@ Java里没有类似的实现，除了Collection里会有一些方法带有option
 
 示例：
 
-	@interface  class MyClass : NSObject <Printable, Drawable>
+	@interface MyClass : NSObject <Printable, Drawable>
 	@end
 
 Printable, Drawablw就是两个协议。
@@ -477,7 +478,7 @@ Printable, Drawablw就是两个协议。
 使用的时候，只要包含NSObject+Json.h，实例化NSObject类，就可以使用toJson方法了：
 
 	import "NSObject+Json.h"
-	@implatementation XYZController
+	@implementation XYZController
 		-(void)test {
 			NSObject *obj = [[NSObject alloc]init];
 			NSString *str = [obj toJson];
@@ -513,7 +514,7 @@ Printable, Drawablw就是两个协议。
 使用：
 
 	import "NSObject+Json+XML.h"
-	@implatementation XYZController
+	@implementation XYZController
 		-(void)test {
 			NSObject *obj = [[NSObject alloc]init];
 			NSString *json = [obj toJson];
